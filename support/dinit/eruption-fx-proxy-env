@@ -1,3 +1,4 @@
 #! /bin/sh
 
+sleep 5
 DISPLAY=":1" /usr/bin/eruption-fx-proxy -c /etc/eruption/fx-proxy.conf daemon

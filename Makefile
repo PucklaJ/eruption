@@ -185,10 +185,12 @@ install:
 	@cp "support/sfx/phaser1.wav" "$(TARGET_DIR)/share/eruption/sfx/"
 	@cp "support/sfx/phaser2.wav" "$(TARGET_DIR)/share/eruption/sfx/"
 	@cp "support/dinit/eruption" "/etc/dinit.d/"
+	@cp "support/dinit/eruption-audio-proxy-env" "$(TARGET_DIR)/bin/"
 	@cp "support/dinit/eruption-fx-proxy-env" "$(TARGET_DIR)/bin/"
 	@cp "support/dinit/eruption-process-monitor-env" "$(TARGET_DIR)/bin/"
 
 	@chmod 0755 $(TARGET_DIR)/lib/systemd/system-sleep/eruption
+	@chmod +x $(TARGET_DIR)/bin/eruption-audio-proxy-env
 	@chmod +x $(TARGET_DIR)/bin/eruption-fx-proxy-env
 	@chmod +x $(TARGET_DIR)/bin/eruption-process-monitor-env
 

@@ -4,3 +4,4 @@ logfile = $HOME/.local/share/dinit/eruption-fx-proxy.log
 command = /usr/bin/eruption-fx-proxy-env
 restart = true
 smooth-recovery = true
+waits-for = eruption-audio-proxy

@@ -1,0 +1,4 @@
+#! /bin/sh
+
+sleep 5
+/usr/bin/eruption-audio-proxy -c /etc/eruption/audio-proxy.conf daemon
