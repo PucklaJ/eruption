@@ -1,0 +1,6 @@
+type = process
+logfile = /var/log/dinit/eruption.log
+command = /usr/bin/eruption -c /etc/eruption/eruption.conf
+restart = true
+smooth-recovery = true
+depends-on = dbus

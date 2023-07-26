@@ -1,0 +1,6 @@
+type = process
+load-options = sub-vars
+logfile = $HOME/.local/share/dinit/eruption-process-monitor.log
+command = /usr/bin/eruption-process-monitor-env
+restart = true
+smooth-recovery = true

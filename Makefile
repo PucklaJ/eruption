@@ -108,6 +108,7 @@ install:
 	@mkdir -p "$(TARGET_DIR)/share/zsh/site-functions"
 	@mkdir -p "$(TARGET_DIR)/share/eruption/i18n"
 	@mkdir -p "$(TARGET_DIR)/share/eruption/sfx"
+	@mkdir -p "/etc/dinit.d"
 
 	# @cp "support/assets/pyroclasm/pyroclasm.desktop" "$(TARGET_DIR)/share/applications/"
 	@cp "support/assets/eruption-gui-gtk3/eruption-gui-gtk3.desktop" "$(TARGET_DIR)/share/applications/"
@@ -183,8 +184,13 @@ install:
 	@cp "support/sfx/typewriter1.wav" "$(TARGET_DIR)/share/eruption/sfx/"
 	@cp "support/sfx/phaser1.wav" "$(TARGET_DIR)/share/eruption/sfx/"
 	@cp "support/sfx/phaser2.wav" "$(TARGET_DIR)/share/eruption/sfx/"
+	@cp "support/dinit/eruption" "/etc/dinit.d/"
+	@cp "support/dinit/eruption-fx-proxy-env" "$(TARGET_DIR)/bin/"
+	@cp "support/dinit/eruption-process-monitor-env" "$(TARGET_DIR)/bin/"
 
 	@chmod 0755 $(TARGET_DIR)/lib/systemd/system-sleep/eruption
+	@chmod +x $(TARGET_DIR)/bin/eruption-fx-proxy-env
+	@chmod +x $(TARGET_DIR)/bin/eruption-process-monitor-env
 
 	@ln -fs "phaser1.wav" "$(TARGET_DIR)/share/eruption/sfx/key-down.wav"
 	@ln -fs "phaser2.wav" "$(TARGET_DIR)/share/eruption/sfx/key-up.wav"
